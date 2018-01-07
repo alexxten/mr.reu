@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+
+<head>
+    <title>Sign_up_form</title>
+</head>
+
+<body>
+
+    <form action="/" method="post">
+        <br>
+        <input type="text" name="fio" placeholder="ФИО"  value="{{@POST.fio}}" required></input>
+        <br>
+        <input type="text" name="kurs" placeholder="Курс"  value="{{@POST.kurs}}" required></input>
+        <br>
+        <input type="text" name="fakultet" placeholder="Факультет"  value="{{@POST.fakultet}}" required></input>
+        <br>
+        <input type="text" name="phone" placeholder="Телефон"  value="{{@POST.phone}}" required></input>
+        <br>
+        <input type="text" name="vklink" placeholder="Ссылка вк"  value="{{@POST.vklink}}" required></input>
+        <br>
+        <input type="text" name="height" placeholder="Рост"  value="{{@POST.height}}" required ></input>
+        <br>
+        <input type="text" name="hobbies" placeholder="Чем занимался (занимается), хобби"  value="{{@POST.hobbies}}" required></input>
+        <br>
+        <input type="text" name="mr_reu_2018" placeholder="Что нужно, чтобы стать Мистером РЭУ-2018?"  value="{{@POST.mr_reu_2018}}" required></input>
+        <br>
+        <input type="text" name="photo" placeholder="фотографии 3-5 шт ( обязательно портретное фото и в полный рост) "  value="{{@POST.photo}}" required></input>
+
+        <p>*Большая просьба! На кастинг приходить с готовой идеей для творческого номера. Быть готовым продемонстрировать свои таланты.</p>
+        <br>
+        <input type="submit" name="sign_up" value="Регистрация"></input>
+    </form>
+
+</body>
+
+</html>
