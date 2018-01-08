@@ -33,7 +33,7 @@ class formController{
         elseif ( mb_strlen($data[height])>256 ) {\models\formAction::errorSend($f3, 1, "Вы ввели больше 256 символов в поле Рост ") ;}
         elseif ( mb_strlen($data[hobbies])>1024 ) {\models\formAction::errorSend($f3, 1, "Вы ввели больше 1024 символов в поле Чем занимался (занимается), хобби ") ;}
         elseif ( mb_strlen($data[mr_reu_2018])>1024 ) {\models\formAction::errorSend($f3, 1, "Вы ввели больше 1024 символов в поле Что нужно, чтобы стать Мистером РЭУ-2018? ") ;}
-        else {\models\formAction::errorSend($f3, 1, "Все окк");}
+        else {\models\formAction::doneSend($f3, $data);}
         
 
 
