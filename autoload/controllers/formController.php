@@ -2,6 +2,21 @@
 namespace controllers;
 
 class formController{
+
+    private function reArrayFiles(&$file_post) {
+        $file_array = array();
+        $file_count = count($file_post['name']);
+        $file_keys = array_keys($file_post);
+    
+        for ($i=0; $i<$file_count; $i++) {
+            foreach ($file_keys as $key) {
+                $file_array[$i][$key] = $file_post[$key][$i];
+            }
+        }
+    
+        return $file_array;
+    }
+    
     public function sendData($f3)
 	{
         // Так получать данные, присланные методом POST. Угадай, как получать данные методом GET :)
@@ -12,7 +27,7 @@ class formController{
 
        
         $data = $f3->get('POST');
-        $files = $f3->get('FILES.photo');
+        $files = formController::reArrayFiles($f3->get('FILES.photo'));
 
         foreach ($data as $key => &$value)
         {
@@ -23,7 +38,7 @@ class formController{
         }
         unset($value);
 
-       // $data[photo] = $files;
+        $data[photo] = $files;
 
         if ( mb_strlen($data[fio])<1 )                 {\models\formAction::errorSend($f3, 1, "Вы не заполнили поле ФИО ") ;}
         elseif ( mb_strlen($data[kurs])<1 )            {\models\formAction::errorSend($f3, 1, "Вы не заполнили поле Курс ") ;}
@@ -44,7 +59,7 @@ class formController{
         //else {\models\formAction::doneSend($f3, $data);}
         
         echo "<pre>";
-        print_r($files);
+        print_r($data);
         echo "</pre>";
 
         // Тут пишем условия проверки всех входных данных.
