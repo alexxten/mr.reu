@@ -33,7 +33,7 @@ class formController{
         elseif ( mb_strlen($data[height])>256 ) {echo "Вы ввели больше 256 символов в поле\"Рост\" " ;}
         elseif ( mb_strlen($data[hobbies])>1024 ) {echo "Вы ввели больше 1024 символов в поле\"Чем занимался (занимается), хобби\" " ;}
         elseif ( mb_strlen($data[mr_reu_2018])>1024 ) {echo "Вы ввели больше 1024 символов в поле\"Что нужно, чтобы стать Мистером РЭУ-2018?\" " ;}
-        else ( {echo "Все окк"} );
+        else {echo "Все окк";}
         
 
 
