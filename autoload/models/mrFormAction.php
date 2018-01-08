@@ -1,12 +1,12 @@
 <?php
 namespace models;
 
-class formAction{ 
+class mrFormAction{ 
     public static function errorSend($f3, $code, $text) 
 	{  
 		$f3->set('codeError', $code);
 		$f3->set('textError', $text);
-		\views\pageView::main($f3);
+		\views\mrPageView::main($f3);
 	}
 
 	public static function doneSend($f3, $data) 
@@ -65,8 +65,8 @@ class formAction{
 		$header .= "Reply-To: no-reply@mister.the-center.it\r\n"; 
 		$header .= "Content-Type: text/html; charset=utf-8\r\n";
 		
-		if ( mail($to,$subject,$message,$header)) {\views\pageView::done($f3);}
-		else {\formAction::errorSend($f3, 1,'Произошла ошибка при отправке данных. Попробуйте снова');}
+		if ( mail($to,$subject,$message,$header)) {\views\mrPageView::done($f3);}
+		else {\mrFormAction::errorSend($f3, 1,'Произошла ошибка при отправке данных. Попробуйте снова');}
 
 	}
 }

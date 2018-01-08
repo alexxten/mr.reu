@@ -1,7 +1,7 @@
 <?php
 namespace views;
 
-class pageView
+class mrPageView
 {
 	public static function main($f3)
 	{

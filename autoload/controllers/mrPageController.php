@@ -1,15 +1,15 @@
 <?php
 namespace controllers;
 
-class pageController
+class mrPageController
 {
 	public function mainPage($f3)
 	{
-		\views\pageView::main($f3);     
+		\views\mrPageView::main($f3);     
 	}
 
     public function notFoundPage($f3)
 	{
-	   \views\pageView::Error404($f3);		
+	   \views\mrPageView::Error404($f3);		
 	}
 }
