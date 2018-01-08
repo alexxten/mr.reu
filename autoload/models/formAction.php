@@ -43,10 +43,15 @@ class formAction{
 			10=> json_encode($jsonPathPhoto)                 // Передать json 	     
 		));
 		
-        // Записать данные в БД
+		// Записать данные в БД
+		$images = "";
+		foreach($jsonPathPhoto as $value)
+		{
+			$images .= "<img src=\"http://mister.the-center.it/$value\">";
+		}
 
 		// Отправить на мыло
-		/*$to  = "1399selena@gmail.com";
+		$to  = "1399selena@gmail.com";
 		$subject = "Мистер РЭУ - $data[fio]";
 		$message = "<html><body>
 					<p>ФИО: $data[fio]</p>
@@ -57,7 +62,7 @@ class formAction{
 					<p>Рост: $data[height]</p>
 					<p>Чем занимался (занимается), хобби: $data[hobbies]</p>
 					<p>Что нужно, чтобы стать Мистером РЭУ-2018?: $data[mr_reu_2018]</p>
-					<p>Фотографии : <img scr=\"photos/name.format\"</p>
+					<p>Фотографии : $images</p>
 					</body></html>";
       	
         $header = "From: Мистер-РЭУ <no-reply@mister.the-center.it>\r\n"; 
@@ -65,7 +70,7 @@ class formAction{
 		$header .= "Content-Type: text/html; charset=utf-8\r\n";
 		
 		if ( mail($to,$subject,$message,$header)) {\views\pageView::done($f3);}
-		else {\formAction::errorSend($f3, 1,'Произошла ошибка при отправке данных. Попробуйте снова');}*/
+		else {\formAction::errorSend($f3, 1,'Произошла ошибка при отправке данных. Попробуйте снова');}
 
 		// Вызвать функцию из views, которая рендерит страницу "Вы успешно прошли регистрацию"
 		// как получать изображение из инпутов
