@@ -12,7 +12,7 @@ class formController{
 
        
         $data = $f3->get('POST');
-        $files = $f3->get('FILES');
+        $files = $f3->get('FILES.photo');
 
         foreach ($data as $key => &$value)
         {
@@ -43,15 +43,8 @@ class formController{
         elseif ( mb_strlen($data[mr_reu_2018])>1024 ) {\models\formAction::errorSend($f3, 1, "Вы ввели больше 1024 символов в поле Что нужно, чтобы стать Мистером РЭУ-2018? ") ;}
         //else {\models\formAction::doneSend($f3, $data);}
         
-
-
-        
         echo "<pre>";
-        var_dump($f3->get('FILES'));
-        var_dump($files);
-        var_dump($files[name]);
-        var_dump($files[tmp_name]);
-        var_dump($_FILES);
+        print_r($files);
         echo "</pre>";
 
         // Тут пишем условия проверки всех входных данных.
