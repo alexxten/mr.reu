@@ -44,7 +44,7 @@ class formAction{
 					<p>Рост: $data[height]</p>
 					<p>Чем занимался (занимается), хобби: $data[hobbies]</p>
 					<p>Что нужно, чтобы стать Мистером РЭУ-2018?: $data[mr_reu_2018]</p>
-					<p>Фотографии : <img scr="photos/name.format"</p>
+					<p>Фотографии : <img scr=\"photos/name.format\"</p>
 					</body></html>";
       	
         $header = "From: Мистер-РЭУ <no-reply@mister.the-center.it>\r\n"; 
