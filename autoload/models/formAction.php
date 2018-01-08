@@ -2,22 +2,18 @@
 namespace models;
 
 class formAction{ 
-    public static function errorSend($f3, $code, $text) // Не забудь указать аргументы необходимые (код ошибки, текст)
+    public static function errorSend($f3, $code, $text) 
 	{  
 		$f3->set('codeError', $code);
 		$f3->set('textError', $text);
 		\views\pageView::main($f3);
-
-		//echo $text;
-        // Вызвать функцию из views, которая рендерит страницу с регистрацией.
-        // В этой странице должно быть предусмотрено поле для вывода текста ошибки
 	}
 
-	public static function doneSend($f3, $data) // Не забудь указать аргументы необходимые
+	public static function doneSend($f3, $data) 
 	{
-		$folderName = md5(microtime()); // Берет время в миллисекундах и хэширует MD5
-		$dir = "/home/s/slink21/mister_reu/public_html/ui/misters/$folderName/"; // В переменную dir записываем название нашей новой директории
-		mkdir($dir); // Создаём дирекорию
+		$folderName = md5(microtime()); 
+		$dir = "/home/s/slink21/mister_reu/public_html/ui/misters/$folderName/"; 
+		mkdir($dir); 
 
 		$jsonPathPhoto = array();
 		
@@ -40,17 +36,17 @@ class formAction{
 			7=> $data[height],
 			8=> $data[hobbies],
 			9=> $data[mr_reu_2018],
-			10=> json_encode($jsonPathPhoto)                 // Передать json 	     
+			10=> json_encode($jsonPathPhoto)                  	     
 		));
 		
-		// Записать данные в БД
+		
 		$images = "";
 		foreach($jsonPathPhoto as $value)
 		{
 			$images .= "<img src=\"http://mister.the-center.it/$value\" width=\"50%\">";
 		}
 
-		// Отправить на мыло
+		
 		$to  = "1399selena@gmail.com";
 		$subject = "Мистер РЭУ - $data[fio]";
 		$message = "<html><body>
@@ -72,7 +68,5 @@ class formAction{
 		if ( mail($to,$subject,$message,$header)) {\views\pageView::done($f3);}
 		else {\formAction::errorSend($f3, 1,'Произошла ошибка при отправке данных. Попробуйте снова');}
 
-		// Вызвать функцию из views, которая рендерит страницу "Вы успешно прошли регистрацию"
-		// как получать изображение из инпутов
 	}
 }
