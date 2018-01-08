@@ -13,6 +13,7 @@ class pageController
 
     public function notFoundPage($f3)
 	{
-        // Выдать страницу "Страница не найдена / Error 404"		
+	   \views\pageView::Error404($f3);
+		// Выдать страницу "Страница не найдена / Error 404"		
 	}
 }

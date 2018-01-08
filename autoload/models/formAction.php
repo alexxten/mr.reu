@@ -36,20 +36,27 @@ class formAction{
 
         // Отправить на мыло
 
-		/*$to  = "emailaddress@example.com";
-		$subject = "Мистер РЭУ - %ФИО%";
+		$to  = "1399selena@gmail.com";
+		$subject = "Мистер РЭУ - $data[fio]";
 		$message = "<html><body>
-					<p>ФИО: %ФИО%</p>
-					<p>Телефон: %телефон%</p>
-                    ...
+					<p>ФИО: $data[fio]</p>
+					<p>Курс: $data[kurs]</p>
+					<p>Факультет: $data[fakultet]</p>
+					<p>Телефон: $data[phone]</p>
+					<p>Ссылка вк: $data[vklink]</p>
+					<p>Рост: $data[height]</p>
+					<p>Чем занимался (занимается), хобби: $data[hobbies]</p>
+					<p>Что нужно, чтобы стать Мистером РЭУ-2018?: $data[mr_reu_2018]</p>
+					<p>Фотографии :</p>
 					</body></html>";
       	
-        $header = "From: Мистер-РЭУ <no-reply@example.com>\r\n"; 
-		$header .= "Reply-To: no-reply@example.com\r\n"; 
+        $header = "From: Мистер-РЭУ <no-reply@mister.the-center.it>\r\n"; 
+		$header .= "Reply-To: no-reply@mister.the-center.it\r\n"; 
         $header .= "Content-Type: text/html; charset=utf-8\r\n";
         
-        mail($to,$subject,$message,$header);*/
+        mail($to,$subject,$message,$header);
 
-        // Вызвать функцию из views, которая рендерит страницу "Вы успешно прошли регистрацию"
+		// Вызвать функцию из views, которая рендерит страницу "Вы успешно прошли регистрацию"
+		// как получать изображение из инпутов
 	}
 }
