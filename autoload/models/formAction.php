@@ -1,14 +1,15 @@
 <?php
 namespace models;
 
-class formAction{
+class formAction{ 
     public static function errorSend($f3, $code, $text) // Не забудь указать аргументы необходимые (код ошибки, текст)
-	{
+	{  
+		echo $text;
         // Вызвать функцию из views, которая рендерит страницу с регистрацией.
         // В этой странице должно быть предусмотрено поле для вывода текста ошибки
 	}
 
-	public static function doneSend($f3, ?...) // Не забудь указать аргументы необходимые
+	public static function doneSend($f3 ) // Не забудь указать аргументы необходимые
 	{
 
         // Записать данные в БД
