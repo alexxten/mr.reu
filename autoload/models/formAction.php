@@ -52,6 +52,7 @@ class formAction{
 		$header .= "Reply-To: no-reply@mister.the-center.it\r\n"; 
         $header .= "Content-Type: text/html; charset=utf-8\r\n";
 			) 
+			
 			{\views\pageView::done($f3);}
 		else {\formAction::errorSend($f3, $code,'Произошла ошибка при отправке данных. Попробуйте снова');}
 
