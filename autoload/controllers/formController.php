@@ -3,6 +3,13 @@ namespace controllers;
 
 class formController{
 
+    private $true_type = [
+        'image/gif' => 'gif',
+        'image/jpeg' => 'jpg',
+        'image/pjpeg' => 'jpg',
+        'image/tiff' => 'tiff'
+    ];
+
     private static function reArrayFiles(&$file_post) {
         $file_array = array();
         $file_count = count($file_post['name']);
@@ -12,16 +19,16 @@ class formController{
             foreach ($file_keys as $key) {
                 $file_array[$i][$key] = $file_post[$key][$i];
             }
+            $file_array[$i]['type'] = formController::$true_type[mime_content_type($file_post['name'])];
         }
     
         return $file_array;
     }
 
-    private static function checkMimeType(&$files) {
+    private static function checkType(&$files) {
         foreach($files as $photo) {
-            if (($photo[type]!='image/gif')&&($photo[type]!='image/jpeg')&&
-                ($photo[type]!='image/pjpeg')&&($photo[type]!='image/png')&&
-                ($photo[type]!='image/tiff'))
+            if (($photo[type]!='gif')&&($photo[type]!='jpg')&&
+                ($photo[type]!='png')&&($photo[type]!='tiff'))
             {
                 return FALSE;
             }
