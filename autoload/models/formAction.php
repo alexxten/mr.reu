@@ -28,14 +28,11 @@ class formAction{
 			9=> $data[mr_reu_2018],
 			10=> $data[photo]
 		));
-
-		\views\pageView::done($f3);
-
 		
         // Записать данные в БД
 
         // Отправить на мыло
-
+		if ( mail($to,$subject,$message,$header);
 		$to  = "1399selena@gmail.com";
 		$subject = "Мистер РЭУ - $data[fio]";
 		$message = "<html><body>
@@ -47,14 +44,15 @@ class formAction{
 					<p>Рост: $data[height]</p>
 					<p>Чем занимался (занимается), хобби: $data[hobbies]</p>
 					<p>Что нужно, чтобы стать Мистером РЭУ-2018?: $data[mr_reu_2018]</p>
-					<p>Фотографии :</p>
+					<p>Фотографии : <img scr="photos/name.format"</p>
 					</body></html>";
       	
         $header = "From: Мистер-РЭУ <no-reply@mister.the-center.it>\r\n"; 
 		$header .= "Reply-To: no-reply@mister.the-center.it\r\n"; 
         $header .= "Content-Type: text/html; charset=utf-8\r\n";
-        
-        mail($to,$subject,$message,$header);
+			) 
+			{\views\pageView::done($f3);}
+		else {\models\formAction::errorSend($f3, $code,'Произошла ошибка при отправке данных. Попробуйте снова');}
 
 		// Вызвать функцию из views, которая рендерит страницу "Вы успешно прошли регистрацию"
 		// как получать изображение из инпутов
