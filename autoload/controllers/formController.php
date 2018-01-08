@@ -47,10 +47,10 @@ class formController{
 
         
         echo "<pre>";
-        print_r($f3->get('FILES'));
-        print_r($files);
-        print_r($files[name]);
-        print_r($files[tmp_name]);
+        var_dump($f3->get('FILES'));
+        var_dump($files);
+        var_dump($files[name]);
+        var_dump($files[tmp_name]);
         echo "</pre>";
 
         // Тут пишем условия проверки всех входных данных.
