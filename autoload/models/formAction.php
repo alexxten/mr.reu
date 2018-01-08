@@ -25,7 +25,7 @@ class formAction{
 			6=> $data[vklink],
 			7=> $data[height],
 			8=> $data[hobbies],
-			9=> $data[mt_reu_2018],
+			9=> $data[mr_reu_2018],
 			10=> $data[photo]
 		));
 
