@@ -52,7 +52,7 @@ class formAction{
         $header .= "Content-Type: text/html; charset=utf-8\r\n";
 			) 
 			{\views\pageView::done($f3);}
-		else {\models\formAction::errorSend($f3, $code,'Произошла ошибка при отправке данных. Попробуйте снова');}
+		else {\formAction::errorSend($f3, $code,'Произошла ошибка при отправке данных. Попробуйте снова');}
 
 		// Вызвать функцию из views, которая рендерит страницу "Вы успешно прошли регистрацию"
 		// как получать изображение из инпутов
