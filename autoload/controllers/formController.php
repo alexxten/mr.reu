@@ -10,13 +10,17 @@ class formController{
         // Так доводим строку до вида, который не навредит нам
         // $name = trim(htmlspecialchars(stripslashes($name)));
 
-        $f3->get('FILES');
+       
         $data = $f3->get('POST');
+        $files = $f3->get('FILES');
+
         foreach ($data as $key => &$value)
         {
             $value = trim(htmlspecialchars(stripslashes($value)));
         }
         unset($value);
+
+        $data[photo] = $files;
 
         if ( mb_strlen($data[fio])<1 ) {\models\formAction::errorSend($f3, 1, "Вы не заполнили поле ФИО ") ;}
         elseif ( mb_strlen($data[kurs])<1 ) {\models\formAction::errorSend($f3, 1, "Вы не заполнили поле Курс ") ;}

@@ -32,8 +32,7 @@ class formAction{
 		
         // Записать данные в БД
 
-        // Отправить на мыло
-		if ( mail($to,$subject,$message,$header);
+		// Отправить на мыло
 		$to  = "1399selena@gmail.com";
 		$subject = "Мистер РЭУ - $data[fio]";
 		$message = "<html><body>
@@ -50,11 +49,10 @@ class formAction{
       	
         $header = "From: Мистер-РЭУ <no-reply@mister.the-center.it>\r\n"; 
 		$header .= "Reply-To: no-reply@mister.the-center.it\r\n"; 
-        $header .= "Content-Type: text/html; charset=utf-8\r\n";
-			) 
-			
-			{\views\pageView::done($f3);}
-		else {\formAction::errorSend($f3, $code,'Произошла ошибка при отправке данных. Попробуйте снова');}
+		$header .= "Content-Type: text/html; charset=utf-8\r\n";
+		
+		if ( mail($to,$subject,$message,$header)) {\views\pageView::done($f3);}
+		else {\formAction::errorSend($f3, 1,'Произошла ошибка при отправке данных. Попробуйте снова');}
 
 		// Вызвать функцию из views, которая рендерит страницу "Вы успешно прошли регистрацию"
 		// как получать изображение из инпутов
