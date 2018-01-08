@@ -12,7 +12,7 @@ class formController{
 
        
         $data = $f3->get('POST');
-        $files = $f3->get('FILES.photo');
+        $files = $f3->get('FILES');
 
         foreach ($data as $key => &$value)
         {
@@ -51,6 +51,7 @@ class formController{
         var_dump($files);
         var_dump($files[name]);
         var_dump($files[tmp_name]);
+        var_dump($_FILES);
         echo "</pre>";
 
         // Тут пишем условия проверки всех входных данных.
