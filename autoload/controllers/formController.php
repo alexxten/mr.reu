@@ -10,7 +10,7 @@ class formController{
         // Так доводим строку до вида, который не навредит нам
         // $name = trim(htmlspecialchars(stripslashes($name)));
 
-        $data = $f3->get('POST');
+        $data = $f3->get('FILES');
         foreach ($data as $key => &$value)
         {
             $value = trim(htmlspecialchars(stripslashes($value)));

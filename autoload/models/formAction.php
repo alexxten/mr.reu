@@ -27,6 +27,7 @@ class formAction{
 			8=> $data[hobbies],
 			9=> $data[mr_reu_2018],
 			10=> $data[photo]
+			     
 		));
 		
         // Записать данные в БД
