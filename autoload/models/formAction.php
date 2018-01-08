@@ -4,7 +4,11 @@ namespace models;
 class formAction{ 
     public static function errorSend($f3, $code, $text) // Не забудь указать аргументы необходимые (код ошибки, текст)
 	{  
-		echo $text;
+		$f3->set('codeError', $code);
+		$f3->set('textError', $text);
+		\views\pageView::main($f3);
+
+		//echo $text;
         // Вызвать функцию из views, которая рендерит страницу с регистрацией.
         // В этой странице должно быть предусмотрено поле для вывода текста ошибки
 	}

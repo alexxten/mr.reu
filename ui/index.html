@@ -33,6 +33,12 @@
         <input type="submit" name="sign_up" value="Регистрация"></input>
     </form>
 
+    <check if="{{@codeError}}">
+        <script>
+        alert('{{@textError}}');
+        </script>
+    </check>
+
 </body>
 
 </html>
