@@ -23,7 +23,7 @@ class formAction{
 		
 		foreach ($data[photo] as $key => &$value) 
 		{
-			$info = new SplFileInfo($value[name]);
+			$info = new \SplFileInfo($value[name]);
 			move_uploaded_file($value[tmp_name], $dir."$key.".$info->getExtension());
 			$jsonPathPhoto[$key] = "ui/misters/$folderName/$key.".$info->getExtension();
 		}
