@@ -10,5 +10,14 @@ class pageView
 		// Сюда можно записать, какие переменные ты хочешь передать в index.html
 
 		echo $template->render("index.html");
-    }
+	}
+	
+	public static function done($f3)
+	{
+		$template = \Template::instance();
+	
+		// Сюда можно записать, какие переменные ты хочешь передать в index.html
+
+		echo $template->render("done.html");
+	}
 }

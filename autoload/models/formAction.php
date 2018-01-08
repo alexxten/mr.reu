@@ -29,6 +29,8 @@ class formAction{
 			10=> $data[photo]
 		));
 
+		\views\pageView::done($f3);
+
 		
         // Записать данные в БД
 
