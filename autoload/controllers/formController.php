@@ -12,7 +12,7 @@ class formController{
 
        
         $data = $f3->get('POST');
-        $files = $f3->get('FILES');
+        $files = $f3->get('FILES.photo');
 
         foreach ($data as $key => &$value)
         {
