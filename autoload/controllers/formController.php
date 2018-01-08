@@ -16,7 +16,10 @@ class formController{
 
         foreach ($data as $key => &$value)
         {
-            $value = trim(htmlspecialchars(stripslashes($value)));
+            if ($key!='photo')
+            {
+                $value = trim(htmlspecialchars(stripslashes($value)));
+            }
         }
         unset($value);
 
