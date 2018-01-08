@@ -15,7 +15,7 @@ class formAction{
 
 	public static function doneSend($f3, $data) // Не забудь указать аргументы необходимые
 	{
-		$f3->get('DB')->exec('INSERT INTO `users`(`id`, `fio`, `kurs`, `fakultet`, `phone`, `vklink`, `height`, `hobbies`, `mr_reu_2018`, `photo`) VALUES (?,?,?,?,?,?,?,?,?,?)', 
+		/*$f3->get('DB')->exec('INSERT INTO `users`(`id`, `fio`, `kurs`, `fakultet`, `phone`, `vklink`, `height`, `hobbies`, `mr_reu_2018`, `photo`) VALUES (?,?,?,?,?,?,?,?,?,?)', 
 		array(
             1=> NULL, 
 			2=> $data[fio],
@@ -52,7 +52,7 @@ class formAction{
 		$header .= "Content-Type: text/html; charset=utf-8\r\n";
 		
 		if ( mail($to,$subject,$message,$header)) {\views\pageView::done($f3);}
-		else {\formAction::errorSend($f3, 1,'Произошла ошибка при отправке данных. Попробуйте снова');}
+		else {\formAction::errorSend($f3, 1,'Произошла ошибка при отправке данных. Попробуйте снова');}*/
 
 		// Вызвать функцию из views, которая рендерит страницу "Вы успешно прошли регистрацию"
 		// как получать изображение из инпутов

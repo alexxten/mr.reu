@@ -51,11 +51,11 @@ class formController{
         elseif (mb_strlen($data[mr_reu_2018]) > 1024)   {\models\formAction::errorSend($f3, 1, "Вы ввели больше 1024 символов в поле Что нужно, чтобы стать Мистером РЭУ-2018?") ;}
         elseif (count($data[photo]) < 3)                {\models\formAction::errorSend($f3, 1, "Вы загрузили меньше 3-х фотографий") ;}
         elseif (count($data[photo]) > 5)                {\models\formAction::errorSend($f3, 1, "Вы загрузили больше 5-и фотографий") ;}
-        //else {\models\formAction::doneSend($f3, $data);}
+        else {\models\formAction::doneSend($f3, $data);}
         
-        echo "<pre>";
+        /*echo "<pre>";
         print_r($data);
-        echo "</pre>";
+        echo "</pre>";*/
 
         // Тут пишем условия проверки всех входных данных.
         // Если данные не прошли проверку, отправляем текст ошибки в функцию ошибки из models
