@@ -47,7 +47,7 @@ class formAction{
 		$images = "";
 		foreach($jsonPathPhoto as $value)
 		{
-			$images .= "<img src=\"http://mister.the-center.it/$value\">";
+			$images .= "<img src=\"http://mister.the-center.it/$value\" width=\"50%\">";
 		}
 
 		// Отправить на мыло
@@ -62,7 +62,7 @@ class formAction{
 					<p>Рост: $data[height]</p>
 					<p>Чем занимался (занимается), хобби: $data[hobbies]</p>
 					<p>Что нужно, чтобы стать Мистером РЭУ-2018?: $data[mr_reu_2018]</p>
-					<p>Фотографии : $images</p>
+					<p>Фотографии :</p>  $images
 					</body></html>";
       	
         $header = "From: Мистер-РЭУ <no-reply@mister.the-center.it>\r\n"; 
