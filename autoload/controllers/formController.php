@@ -20,7 +20,7 @@ class formController{
         }
         unset($value);
 
-        $data[photo] = $files;
+       // $data[photo] = $files;
 
         if ( mb_strlen($data[fio])<1 ) {\models\formAction::errorSend($f3, 1, "Вы не заполнили поле ФИО ") ;}
         elseif ( mb_strlen($data[kurs])<1 ) {\models\formAction::errorSend($f3, 1, "Вы не заполнили поле Курс ") ;}
@@ -42,9 +42,12 @@ class formController{
         
 
 
-
+        
         echo "<pre>";
-        print_r($data);
+        print_r($f3->get('FILES'));
+        print_r($files);
+        print_r($files[name]);
+        print_r($files[tmp_name]);
         echo "</pre>";
 
         // Тут пишем условия проверки всех входных данных.
