@@ -47,7 +47,7 @@ class mrFormAction{
 		}
 
 		
-		$to  = "1399selena@gmail.com";
+		$to  = "misterreu2018@gmail.com";
 		$subject = "Мистер РЭУ - $data[fio]";
 		$message = "<html><body>
 					<p>ФИО: $data[fio]</p>
