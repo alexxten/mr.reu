@@ -2,14 +2,7 @@
 namespace controllers;
 
 class formController{
-
-    private $true_type = [
-        'image/gif' => 'gif',
-        'image/jpeg' => 'jpg',
-        'image/pjpeg' => 'jpg',
-        'image/tiff' => 'tiff'
-    ];
-
+    
     private static function reArrayFiles(&$file_post) {
         $file_array = array();
         $file_count = count($file_post['name']);
@@ -19,21 +12,9 @@ class formController{
             foreach ($file_keys as $key) {
                 $file_array[$i][$key] = $file_post[$key][$i];
             }
-            $file_array[$i]['type'] = formController::$true_type[mime_content_type($file_post['name'])];
         }
     
         return $file_array;
-    }
-
-    private static function checkType(&$files) {
-        foreach($files as $photo) {
-            if (($photo[type]!='gif')&&($photo[type]!='jpg')&&
-                ($photo[type]!='png')&&($photo[type]!='tiff'))
-            {
-                return FALSE;
-            }
-        }
-        return TRUE;
     }
     
     public function sendData($f3)
@@ -70,8 +51,6 @@ class formController{
         elseif (mb_strlen($data[mr_reu_2018]) > 1024)   {\models\formAction::errorSend($f3, 1, "Вы ввели больше 1024 символов в поле Что нужно, чтобы стать Мистером РЭУ-2018?") ;}
         elseif (count($data[photo]) < 3)                {\models\formAction::errorSend($f3, 1, "Вы загрузили меньше 3-х фотографий") ;}
         elseif (count($data[photo]) > 5)                {\models\formAction::errorSend($f3, 1, "Вы загрузили больше 5-и фотографий") ;}
-        elseif (formController::checkMimeType($data[photo])) {\models\formAction::errorSend($f3, 1, "Допустимые расширения изображений: jpeg, png, gif, tiff") ;}
-
         //else {\models\formAction::doneSend($f3, $data);}
         
         echo "<pre>";
