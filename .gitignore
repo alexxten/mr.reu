@@ -1,2 +1,4 @@
 tmp/
 ui/misters/
+ui/node_modules/
+ui/build/
